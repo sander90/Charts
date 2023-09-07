@@ -505,7 +505,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
                 let set = data?[highlight.dataSetIndex],
                 let e = data?.entry(for: highlight)
                 else { continue }
-            print("[chart] ---> draw marker ------------> \(e)");
+//            print("[chart] ---> draw marker ------------> \(e)");
             let entryIndex = set.entryIndex(entry: e)
             guard entryIndex <= Int(Double(set.entryCount) * chartAnimator.phaseX) else { continue }
 

@@ -297,7 +297,7 @@ open class LineChartRenderer: LineRadarRenderer
     
     @objc open func drawLinear(context: CGContext, dataSet: LineChartDataSetProtocol)
     {
-        print("[chart] ---> drawLinear : \(dataSet)")
+//        print("[chart] ---> drawLinear : \(dataSet)")
         guard let dataProvider = dataProvider else { return }
         
         let trans = dataProvider.getTransformer(forAxis: dataSet.axisDependency)
@@ -392,11 +392,11 @@ open class LineChartRenderer: LineRadarRenderer
         }
         else
         { // only one color per dataset
-            print("[chart] ---> entryForIndex --> 1 : \(_xBounds.min)")
+//            print("[chart] ---> entryForIndex --> 1 : \(_xBounds.min)")
             guard dataSet.entryForIndex(_xBounds.min) != nil else {
                 return
             }
-            print("[chart] ---> entryForIndex --> 2 : \(_xBounds.range)")
+//            print("[chart] ---> entryForIndex --> 2 : \(_xBounds.range)")
 
             var firstPoint = true
 
@@ -638,14 +638,14 @@ open class LineChartRenderer: LineRadarRenderer
         {
             guard let dataSet = lineData[i] as? LineChartDataSetProtocol else { continue }
             
-            print("[chart] ---> draw dataSet -> \(dataSet)");
+//            print("[chart] ---> draw dataSet -> \(dataSet)");
             // Skip Circles and Accessibility if not enabled,
             // reduces CPU significantly if not needed
             if !dataSet.isVisible || !dataSet.isDrawCirclesEnabled || dataSet.entryCount == 0
             {
                 continue
             }
-            print("[chart] --> draw datawSet --> 2 : \(dataSet.entryCount)")
+//            print("[chart] --> draw datawSet --> 2 : \(dataSet.entryCount)")
             
             let trans = dataProvider.getTransformer(forAxis: dataSet.axisDependency)
             let valueToPixelMatrix = trans.valueToPixelMatrix
@@ -667,11 +667,11 @@ open class LineChartRenderer: LineRadarRenderer
             for j in _xBounds
             {
                 guard let e = dataSet.entryForIndex(j) else { break }
-                print("[chart] ---> draw view Bound ---> \(e)")
+//                print("[chart] ---> draw view Bound ---> \(e)")
                 pt.x = CGFloat(e.x)
                 pt.y = CGFloat(e.y * phaseY)
                 pt = pt.applying(valueToPixelMatrix)
-                print("[chart] ---> draw view Bound pt ---> \(pt)")
+//                print("[chart] ---> draw view Bound pt ---> \(pt)")
 
 //                if (!viewPortHandler.isInBoundsRight(pt.x))
 //                {
