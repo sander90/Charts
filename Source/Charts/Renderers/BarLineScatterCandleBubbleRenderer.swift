@@ -109,7 +109,7 @@ open class BarLineScatterCandleBubbleRenderer: NSObject, DataRenderer
             self.min = entryFrom == nil ? 0 : dataSet.entryIndex(entry: entryFrom!)
             self.max = entryTo == nil ? 0 : dataSet.entryIndex(entry: entryTo!)
             range = Int(Double(self.max - self.min) * phaseX)
-            print("[chart] Calculates - draw Line range : \(range)");
+//            print("[chart] Calculates - draw Line range : \(range)");
         }
     }
     

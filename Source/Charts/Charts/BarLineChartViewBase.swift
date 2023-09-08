@@ -170,39 +170,39 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     
     open override func draw(_ rect: CGRect)
     {
-        print("[chart] ----> draw")
+//        print("[chart] ----> draw")
         super.draw(rect)
 
         guard data != nil, let renderer = renderer else { return }
-        print("[chart] ----> \(data!.count)")
+//        print("[chart] ----> \(data!.count)")
         let optionalContext = NSUIGraphicsGetCurrentContext()
         guard let context = optionalContext else { return }
 
         // execute all drawing commands
         drawGridBackground(context: context)
-        print("[chart] ----> gridBackground")
+//        print("[chart] ----> gridBackground")
 
         if _autoScaleMinMaxEnabled
         {
-            print("[chart] ----> autScale")
+//            print("[chart] ----> autScale")
             autoScale()
         }
 
         if leftAxis.isEnabled
         {
-            print("[chart] ----> left Axis")
+//            print("[chart] ----> left Axis")
             leftYAxisRenderer.computeAxis(min: leftAxis._axisMinimum, max: leftAxis._axisMaximum, inverted: leftAxis.isInverted)
         }
         
         if rightAxis.isEnabled
         {
-            print("[chart] ----> right Axis")
+//            print("[chart] ----> right Axis")
             rightYAxisRenderer.computeAxis(min: rightAxis._axisMinimum, max: rightAxis._axisMaximum, inverted: rightAxis.isInverted)
         }
         
         if xAxis.isEnabled
         {
-            print("[chart] ----> x Axis")
+//            print("[chart] ----> x Axis")
             xAxisRenderer.computeAxis(min: xAxis._axisMinimum, max: xAxis._axisMaximum, inverted: false)
         }
         
@@ -261,7 +261,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         
         if xAxis.isEnabled && !xAxis.isDrawLimitLinesBehindDataEnabled
         {
-            print("[chart] ----> renderLimitLines : \(xAxisRenderer)")
+//            print("[chart] ----> renderLimitLines : \(xAxisRenderer)")
             xAxisRenderer.renderLimitLines(context: context)
         }
         
@@ -292,7 +292,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         {
             renderer.drawValues(context: context)
         }
-        print("[chart] ----> renderLegend : \(legendRenderer)")
+//        print("[chart] ----> renderLegend : \(legendRenderer)")
         legendRenderer.renderLegend(context: context)
         
         drawDescription(in: context)

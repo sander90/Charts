@@ -490,14 +490,14 @@ open class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
     /// draws all MarkerViews on the highlighted positions
     internal func drawMarkers(context: CGContext)
     {
-        print("[chart] ----> draw markers");
+//        print("[chart] ----> draw markers");
         // if there is no marker view or drawing marker is disabled
         guard
             let marker = marker,
             isDrawMarkersEnabled,
             valuesToHighlight()
             else { return }
-        print("[chart] ----> draw markers ---> \(highlighted)");
+//        print("[chart] ----> draw markers ---> \(highlighted)");
 
         for highlight in highlighted
         {

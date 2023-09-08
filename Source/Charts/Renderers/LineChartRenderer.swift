@@ -633,7 +633,7 @@ open class LineChartRenderer: LineRadarRenderer
         }
 
         context.saveGState()
-        print("[chart] -----> draw view bound lineData.indices : \(lineData.indices.count)")
+//        print("[chart] -----> draw view bound lineData.indices : \(lineData.indices.count)")
         for i in lineData.indices
         {
             guard let dataSet = lineData[i] as? LineChartDataSetProtocol else { continue }
